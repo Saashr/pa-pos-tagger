@@ -1,0 +1,7 @@
+logs
+results
+__pycache__/
+*.py[cod]
+*swp
+ud-treebanks-v2.9.tgz
+wikiextractor
