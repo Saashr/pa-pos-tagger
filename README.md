@@ -1,4 +1,6 @@
-Survey of POS Taggers Performance on Shahmukhi Punjabi Corpus
+***Survey of POS Taggers Performance on Shahmukhi Punjabi Corpus***
+
+
 This repository contains the research and analysis conducted in the project "Survey of POS Taggers Performance on Shahmukhi Punjabi Corpus". Our goal is to evaluate the performance of various Part-of-Speech (POS) taggers specifically designed for the Shahmukhi script of the Punjabi language.
 
 Introduction
