@@ -27,7 +27,7 @@ cat examples/pa-ud-test.conllu | python3 tagger.py model.dat > outputs/predictio
 ***Evaluate***
 python3 simple_eval.py examples/pa-ud-test.conllu outputs/prediction_output > outputs/score_perceptron.txt
 
-# Machamp 
+# CRF
 
 ***Train & Predict*** 
 python3 crf_pos_tagger.py  # Outputs: pos_tagger_model.pkl, crf_pos_predictions.conllu
@@ -35,7 +35,7 @@ python3 crf_pos_tagger.py  # Outputs: pos_tagger_model.pkl, crf_pos_predictions.
 ***Evaluate***
 python3 simple_eval.py examples/pa-ud-test.conllu outputs/crf_pos_predictions.conllu > outputs/score_crf.txt
 
-# CRF
+# Machamp
 
 ***Setup*** 
 
