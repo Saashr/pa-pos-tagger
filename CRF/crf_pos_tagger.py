@@ -46,7 +46,7 @@ def word2features(sent, i):
         'word.lower()': word.lower(),
         'word.first1)': word[0],
         'word.last1': word[-1],
-        # Add more features as needed
+
     }
     #print(features, file=sys.stderr)   
     return features
@@ -80,7 +80,7 @@ y_pred = crf.predict(X_test)
 print('test:', y_test[0:5])
 print('pred:',y_pred[0:5])
 
-joblib.dump(crf, 'outputs/pos_tagger_model.pkl')
+joblib.dump(crf, 'logs/pos_tagger_model.pkl')
 # Evaluate the model
 
 y_pred_conllu = []

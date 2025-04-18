@@ -213,7 +213,7 @@ def tagger(corpus_file, model_file):
     t.tag(corpus_file)
 
 
-def trainer(corpus_file, model_file):
+def trainer(corpus_file, model_file, nr_iter):
     ''' train a model
     :param corpus_file is a file handle
     :param model_file is a saved model file
@@ -230,13 +230,19 @@ def trainer(corpus_file, model_file):
             sentence.append(tuple(token.strip().split('\t')))
         sentences.append(sentence)
 
-    t.train(sentences, save_loc=model_file, nr_iter=5)
+    t.train(sentences, save_loc=model_file, nr_iter=nr_iter)
 
 
-if len(sys.argv) == 3 and sys.argv[1] == '-t':
-    trainer(sys.stdin, sys.argv[2])
+if len(sys.argv) >= 3 and sys.argv[1] == '-t':
+    model_file = sys.argv[2]
+    nr_iter = int(sys.argv[3]) if len(sys.argv) > 3 else 5  # default to 5
+    trainer(sys.stdin, model_file, nr_iter=nr_iter)
+
 elif len(sys.argv) == 2:
     tagger(sys.stdin, sys.argv[1])
+
 else:
-    print('tagger.py [-t] model.dat');
+    print('Usage:')
+    print('  tagger.py -t model.dat [nr_iter]')
+    print('  tagger.py model.dat')
     sys.exit(-1)
