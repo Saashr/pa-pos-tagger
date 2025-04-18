@@ -12,42 +12,42 @@ The data is a Punjabi Shahmukhi annotated corpus publically available at :
 https://github.com/toqeerehsan/Shahmukhi-POS-Tagging
 
 
-.
-├── examples/                   # Contains train/dev/test .conllu files
-│   ├── pa-ud-train.conllu
-│   ├── pa-ud-dev.conllu
-│   ├── pa-ud-test.conllu
-│   └── pa-combined-data.conllu (from combine_data.py)
+.<br>
+├── examples/                   # Contains train/dev/test .conllu files<br>
+│   ├── pa-ud-train.conllu<br>
+│   ├── pa-ud-dev.conllu<br>
+│   ├── pa-ud-test.conllu<br>
+│   └── pa-combined-data.conllu (from combine_data.py)<br>
+│<br>
+├── folds/                     # 5-fold cross-validation splits<br>
+│   ├── pa-fold-1.conllu<br>
+│   └── ...<br>
+│<br>
+├── logs/                      # Model files from cross-validation or convergence<br>
+│   ├── model.dat (Perceptron)<br>
+│   ├── pos_tagger_model.pkl (CRF)<br>
+│   └── MaChAmp saved checkpoints<br>
+│<br>
+├── outputs/                   # Evaluation results & plots<br>
+│   ├── prediction_output<br>
+│   ├── score_perceptron.txt<br>
+│   ├── score_crf.txt<br>
+│   ├── score_machamp.txt<br>
+│   ├── crf_convergence_plot_TERvsIterations.png<br>
+│   ├── perceptron_convergence_plot_TERvsCorpusSize.png<br>
+│   └── ...<br>
 │
-├── folds/                     # 5-fold cross-validation splits
-│   ├── pa-fold-1.conllu
-│   └── ...
+├── configs/                   # MaChAmp config files<br>
+│   ├── pa.upos.json<br>
+│   └── params.json<br>
 │
-├── logs/                      # Model files from cross-validation or convergence
-│   ├── model.dat (Perceptron)
-│   ├── pos_tagger_model.pkl (CRF)
-│   └── MaChAmp saved checkpoints
-│
-├── outputs/                   # Evaluation results & plots
-│   ├── prediction_output
-│   ├── score_perceptron.txt
-│   ├── score_crf.txt
-│   ├── score_machamp.txt
-│   ├── crf_convergence_plot_TERvsIterations.png
-│   ├── perceptron_convergence_plot_TERvsCorpusSize.png
-│   └── ...
-│
-├── configs/                   # MaChAmp config files
-│   ├── pa.upos.json
-│   └── params.json
-│
-├── cross_validation.py
-├── model_convergence_TERvsIterations.py
-├── model_convergence_TERvsCorpusSize.py
-├── tagger.py (Perceptron)
-├── crf_pos_tagger.py
-├── simple_eval.py
-└── combine_data.py
+├── cross_validation.py<br>
+├── model_convergence_TERvsIterations.py<br>
+├── model_convergence_TERvsCorpusSize.py<br>
+├── tagger.py (Perceptron)<br>
+├── crf_pos_tagger.py<br>
+├── simple_eval.py<br>
+└── combine_data.py<br>
 
 
 # Models
@@ -148,21 +148,21 @@ outputs/ter_vs_train_size.png
 
 ## Convergence Analysis
 
-A. TER vs Iterations (10, 20, ..., N) - Fixed Corpus Size 
+A. TER vs Iterations (10, 20, ..., N) - Fixed Corpus Size <br>
 
-Run: CRF/model_convergence_TERvsIterations.py
-Outputs:
-CRF: crf_convergence_metrics_TERvsIterations.csv	& crf_convergence_plot_TERvsIterations.png
-Perceptron: 	perceptron_convergence_metrics_TERvsIterations.csv &	perceptron_convergence_plot_TERvsIterations.png
+Run: CRF/model_convergence_TERvsIterations.py<br>
+Outputs:<br>
+CRF: crf_convergence_metrics_TERvsIterations.csv	**&** crf_convergence_plot_TERvsIterations.png<br>
+Perceptron: 	perceptron_convergence_metrics_TERvsIterations.csv **&**	perceptron_convergence_plot_TERvsIterations.png<br>
 
 
 
-B. TER vs Corpus Size (10%, 20%, 30%) — Fixed 100 iterations
+B. TER vs Corpus Size (10%, 20%, 30%) — Fixed 100 iterations<br>
 
-Run: perceptron/model_convergence_TERvsCorpusSize.py
-Outputs:
-CRF: 	crf_convergence_metrics_TERvsCorpusSize.csv	& crf_convergence_plot_TERvsCorpusSize.png
-Perceptron: 	perceptron_convergence_TERvsCorpusSize.csv	& perceptron_convergence_plot_TERvsCorpusSize.png
+Run: perceptron/model_convergence_TERvsCorpusSize.py<br>
+Outputs:<br>
+CRF: 	crf_convergence_metrics_TERvsCorpusSize.csv	**&** crf_convergence_plot_TERvsCorpusSize.png<br>
+Perceptron: 	perceptron_convergence_TERvsCorpusSize.csv	**&** perceptron_convergence_plot_TERvsCorpusSize.png<br>
 
 -----
 
