@@ -127,22 +127,15 @@ Each tagger produces the following outputs:
 
 ## Cross-Validation (5 Folds)
 
-Step 1: Run (in main directory) combine_data.py to generate:
+step 1: In each tagger run, combine_data.py (in main) to generate : examples/pa-combined-data.conllu **&** folds/pa-fold-1.conllu to pa-fold-5.conllu<br>
 
-examples/pa-combined-data.conllu
+step 2: Run cross_validation.py with increasing train sizes (20%, 40%, 60%, 80%) on given folds<br>
 
-folds/pa-fold-1.conllu to pa-fold-5.conllu
+Outputs: (for each model)<br>
 
-Step 2: Run cross-validation with increasing train sizes (20%, 40%, 60%, 80%):
+outputs/cross_validation_results.csv<br>
 
-
-cross_validation.py
-
-Outputs: (for each model)
-
-outputs/cross_validation_results.csv
-
-outputs/ter_vs_train_size.png
+outputs/ter_vs_train_size.png<br>
 
 ---
 
